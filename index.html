@@ -8,127 +8,14 @@
     <meta name="description" content="百度一下你就知道">
     <title>百度一下你就知道</title>
 	
-	<link rel="shortcut icon" href="http://idcsm.com/favicon.ico" />
+<link rel="shortcut icon" href="http://idcsm.com/favicon.ico" />
     <meta name="author" content="tciqq.com" />
     <meta name="generator" content="UomgJump" />
     <meta name="360-site-verification" content="c349a8928dddbcde6e4ab9a31dab7928" />
-    <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <script>
-      $(document).ready(function(){
-        $('#start').click(function(){
-          var url = $("input[id='longurl']").val();
-          var radionum = document.getElementsByName("api");
-          for(var i=0;i<radionum.length;i++){
-              if(radionum[i].checked){Gtype = radionum[i].value;}
-          } 
-          if (Gtype == 'dwz' ) {
-            $.ajax({
-              type:"post",
-              url: "dwz.php",
-              dataType: "json",
-              data:"longurl="+url,
-              async:true,
-              success: function(a) {
-                  var strJson = JSON.stringify(a) 
-                  var data = $.parseJSON(strJson);
-                  console.log(data); 
-                  if(data.ae_url){
-                      $('#dwzdate').html(data.ae_url);
-					  $('#dwzdate2').html(data.dwz_url);
-                      GetQr(data.ae_url);
-                  }else{
-				  
-                    alert(data.msg);
-                  }
-              },
-              error: function(a) {
-                alert("失败！！");
-              }
-            });
-          }else if (Gtype == 'tj' ) {
-            window.location.href='tj.php?longurl='+url;
-          }
-        });
-      });
-    </script>
-  </head>
-  <body class="is-loading">
-  
 
-    <!-- Wrapper -->
-      <div id="wrapper">
+<body> 
 
-        <!-- Main -->
-          <section id="main">
-            <div>
-              <span class="logo"><a href="http://baidu.com" target="_blank" title="乐博"><img src="http://idcsm.com/logo.png"></span>
-              <p>防红短链接</p></a>
-			   
-            </div>
-            <div id="Gtype">
-              <input id="dwz" name="api" type="radio" value="dwz" checked="checked">
-              <label for="dwz">生成</label>
-              <input id="tj" name="api" type="radio" value="tj">
-              <label for="tj">统计</label>
-            </div>
-            <div>
-              <input class="longurl" type="text" id="longurl" placeholder="不需要http://">
-              <input class="btn"  type="button" id="start" value="开车">
-              <p></p>
-            </div>
-            ↓↓防红短链↓↓<p id="dwzdate"> 请输入域名后开车<br /></p>
-			<p id="dwzdate2"> 请输入域名后开车<br /></p>
-            <div id="qrcode"></div>
-          </section>
-
-        <!-- Footer --> 
-          <footer id="footer">
-            <ul class="copyright">
-                <li><a href="https://baidu.com/" target="_blank">@作者:乐博</a> <br><br><br> <a href="http://baidu.com" target="_blank">乐博</a></li>
-				</BR></BR>
-              
-     
-          </footer>
-      </div>
-
-    <!-- Scripts -->
-      <!--[if lte IE 8]><script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-      <script>
-        if ('addEventListener' in window) {
-          window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-          document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-        }
-      </script>
-      <script>
-        GetQr(location.protocol+'//'+location.host);
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?c9b551ce2626bbd8ca5223005b4b1ffa";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        function GetQr(url){
-            var qrcode = $('#qrcode');
-            qrcode.html('');
-            qrcode.qrcode({
-                width: 200,
-                height: 200,
-                text: url
-            });
-            qrcode.removeClass('am-hide');
-        }
-      </script>
-
-  </body>
-</html></body>
-</html>
+<iframe name="myframe" src="http://lebo88.cn" frameborder="0" scrolling="auto" width="100%" height="100%" onload="document.all['myframe'].style.height=myframe.document.body.scrollHeight" ></iframe>
 
 </body>
 </html>
