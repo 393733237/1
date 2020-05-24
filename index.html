@@ -1,12 +1,34 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="百度一下你就知道">
-    <meta name="description" content="百度一下你就知道">
-    <title>百度一下你就知道</title>
-    <meta name="360-site-verification" content="c349a8928dddbcde6e4ab9a31dab7928" />
-<frameset rows="100%" border="0" frameborder="0" framespacing="0" framecolor="#000000"><frame src="https://qweee.a0001.net" scrolling="auto"></frameset><noframes><body>您的浏览器不支持iframe，无法访问！</body></noframes>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        /* 将根元素占满浏览器 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var iframeEle = document.getElementsByTagName("iframe");
+            // iframe使用子页面的title
+            iframeEle.contentWindow.document.title;
+        }
+    </script>
+</head>
+<body>
+<iframe src="https://l38.cc" allowfullscreen="true" allow="microphone; camera"></iframe>
+</body>
 </html>
