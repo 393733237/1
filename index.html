@@ -21,15 +21,22 @@
             border: 0;
         }
     </style>
-    <script type="text/javascript">
-        window.onload = function () {
-            var iframeEle = document.getElementsByTagName("iframe");
-            // iframe使用子页面的title
-            iframeEle.contentWindow.document.title;
-        }
-    </script>
+ 
 </head>
 <body>
-<iframe src="http://8-9.tpddns.cn:801" allowfullscreen="true" allow="microphone; camera"></iframe>
+<iframe  id="myIframe"  allowfullscreen="true" allow="microphone; camera"></iframe>
+    <script type="text/javascript">
+    
+        function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+var ldgurl = GetQueryString("url");
+const iframe = document.getElementById('myIframe');
+        iframe.src = ldgurl;
+	
+    </script>
 </body>
 </html>
